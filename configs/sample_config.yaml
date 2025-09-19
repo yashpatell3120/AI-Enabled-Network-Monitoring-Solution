@@ -1,0 +1,29 @@
+# Sample configuration for the AI-enabled network monitoring pipeline.
+
+devices:
+  - host: 192.0.2.10
+    community: public
+    port: 161
+    version: "2c"
+    location: Core Switch Room
+
+snmp:
+  metrics:
+    - name: cpu_utilization
+      oid: 1.3.6.1.4.1.9.2.1.58.0
+      scale: 0.01
+    - name: memory_used
+      oid: 1.3.6.1.4.1.9.2.1.8.0
+    - name: interface_errors
+      oid: 1.3.6.1.2.1.2.2.1.14.1
+
+icmp:
+  count: 5
+  interval: 1.0
+  timeout: 1.0
+
+anomaly:
+  threshold: 3.0
+  min_samples: 20
+  window_size: 200
+

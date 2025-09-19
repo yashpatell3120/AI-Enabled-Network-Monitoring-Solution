@@ -1,0 +1,23 @@
+[project]
+name = "ai-network-monitoring"
+version = "0.1.0"
+description = "AI-enabled network monitoring toolkit"
+readme = "README.md"
+authors = [{ name = "AI Assistant" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0"
+]
+
+[project.optional-dependencies]
+snmp = ["pysnmp>=4.4"]
+icmp = ["pythonping>=1.1.4"]
+dev = ["pytest>=7.4", "pytest-cov>=4.1"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
